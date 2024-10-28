@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.site-container {
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+.btnEstoqueDisponivel {
+  background-color: darkgreen;
+  width: 100%;
+}
+
+.btnEstoqueDisponivel:focus,
+.btnEstoqueDisponivel:hover {
+  background-color: green;
+}
+
+.produtos {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.classificacao span {
+  color: #ffc000;
+}
+
+.classificacao span.reviewText {
+  color: black;
+}
+
+.img-large {
+  max-width: 100%;
+}
+
+.img-thumbnail {
+  height: 80px;
+}
+
+.small-container {
+  max-width: 600px;
+}
+
+.mensagemErroLogin {
+  color: red;
+  visibility: visible;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.mensagemErroLogin-false {
+  color: red;
+  visibility: hidden;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.titulo {
+  text-align: center;
+}
+
+.GFG {
+  background-color: white;
+  border: 2px solid black;
+  color: green;
+  padding: 5px 10px;
+  text-align: center;
+  display: inline-block;
+  font-size: 20px;
+  margin: 10px 30px;
+  cursor: pointer;
+}
