@@ -38,7 +38,6 @@ function PaginaProdutos() {
       error: "",
     }
   );
-
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [sidebarOpen, setSidebarOpen] = useState(window.innerWidth > 768);
   const sidebarRef = useRef(null);
@@ -116,7 +115,7 @@ function PaginaProdutos() {
   return (
     <div className="pagina-produtos">
       <Helmet>
-        <title>webproject</title>
+        <title>Greenpath</title>
       </Helmet>
 
       <div

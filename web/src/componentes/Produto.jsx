@@ -5,6 +5,7 @@ import Button from "react-bootstrap/Button";
 import axios from "axios";
 import { useContext } from "react";
 import { Loja } from "../Loja";
+import "../css/Produto.css";
 
 function Produto(props) {
   const { produto } = props;
@@ -40,29 +41,32 @@ function Produto(props) {
   };
 
   return (
-    <Card className="produto-card">
+    <Card className="fixed-card-size">
       <Link to={`/produto/${produto.categoria_prod}/${produto.link_url}`}>
-        <img
+        <Card.Img
+          variant="top"
           src={produto.imagem_prod_path}
-          className="card-img-top"
-          alt={produto.nome_produto}
+          alt={produto.nome_prod}
+          className="img-large"
         />
       </Link>
-      <Card.Body>
-        <Link to={`/produto/${produto.categoria_prod}/${produto.link_url}`}>
-          <Card.Title>{produto.nome_produto}</Card.Title>
-        </Link>
-        <Card.Text>
-          <h5 className="product-name">Valor: R${produto.valor_prod} </h5>
+      <Card.Body className="card-body-content">
+        <Card.Title className="product-name">
+          <Link to={`/produto/${produto.categoria_prod}/${produto.link_url}`}>
+            {produto.nome_prod}
+          </Link>
+        </Card.Title>
+        <Card.Text className="product-price">
+          Valor: R$ {produto.valor_prod}
         </Card.Text>
         {produto.estoque_prod === 0 ? (
-          <Button disabled className="btnEstoqueDisponivel">
+          <Button disabled className="add-to-cart-button">
             Produto indisponivel
           </Button>
         ) : (
           <Button
             onClick={() => adicionarAoCarrinho(produto)}
-            className="btnEstoqueDisponivel"
+            className="add-to-cart-button"
           >
             Adicionar ao carrinho
           </Button>

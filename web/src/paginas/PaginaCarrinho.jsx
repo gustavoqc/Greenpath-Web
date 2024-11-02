@@ -21,6 +21,8 @@ export default function PaginaCarrinho() {
     carrinho: { carrinhoItems },
   } = state;
 
+  const round2 = (num) => Math.round(num * 100 + Number.EPSILON) / 100;
+
   const atualizarCarrinho = async (item, quantidade) => {
     const { data } = await axios.get(
       `http://localhost:3001/selectProduto/${item.id_prod}`,
@@ -80,7 +82,7 @@ export default function PaginaCarrinho() {
                     <Col md={2}>
                       <img
                         src={item.imagem_prod_path}
-                        alt={item.nome_produto}
+                        alt={item.nome_prod}
                         className="img-fluid rounded img-thumbnail"
                       ></img>{" "}
                     </Col>
@@ -88,7 +90,7 @@ export default function PaginaCarrinho() {
                       <Link
                         to={`/produto/${item.categoria_prod}/${item.link_url}`}
                       >
-                        {item.nome_produto}
+                        {item.nome_prod}
                       </Link>
                     </Col>
                     <Col md={2}>
@@ -133,9 +135,11 @@ export default function PaginaCarrinho() {
                     Sub-total (
                     {carrinhoItems.reduce((a, c) => a + c.quantidade, 0)} items)
                     : R$
-                    {carrinhoItems.reduce(
-                      (a, c) => a + c.valor_prod * c.quantidade,
-                      0
+                    {round2(
+                      carrinhoItems.reduce(
+                        (a, c) => a + c.valor_prod * c.quantidade,
+                        0
+                      )
                     )}
                   </h3>
                 </ListGroup.Item>

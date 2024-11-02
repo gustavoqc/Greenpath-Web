@@ -35,7 +35,6 @@ export default function PaginaRegistrar() {
 
       if (password !== confirmPassword) {
         setErrorMessageValue("Senhas não coincidem. Tente novamente.");
-        console.log("Erro, senhas diferentes");
       } else {
         await axios.post(`http://localhost:3001/insertNovoCliente`, {
           nome: name,

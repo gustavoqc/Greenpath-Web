@@ -78,13 +78,13 @@ export default function PaginaPedido() {
                         <Col md={6}>
                           <img
                             src={item.imagem_prod_path}
-                            alt={item.nome_produto}
+                            alt={item.nome_prod}
                             className="img-fluid rounded img-thumbnail"
                           ></img>{" "}
                           <Link
                             to={`/produto/${item.categoria_prod}/${item.link_url}`}
                           >
-                            {item.nome_produto}
+                            {item.nome_prod}
                           </Link>
                         </Col>
                         <Col md={3}>

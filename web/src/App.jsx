@@ -23,7 +23,7 @@ import PaginaProdutos from "./paginas/PaginaProdutos";
 import "./css/App.css";
 
 function App() {
-  const navigate = useNavigate(); // Correctly using useNavigate
+  const navigate = useNavigate();
   const { state } = useContext(Loja);
   const { carrinho } = state;
   const [user, setUser] = useState(null);
@@ -41,8 +41,9 @@ function App() {
     localStorage.removeItem("paymentData");
     localStorage.removeItem("shippingData");
 
-    setUser(null); // Update user state
-    navigate("/"); // Redirect using navigate
+    setUser(null);
+    navigate("/");
+    window.location.reload();
   };
 
   const Private = ({ children }) => {
@@ -63,7 +64,7 @@ function App() {
         <Navbar bg="dark" variant="dark" expand="lg">
           <Container>
             <LinkContainer to="/">
-              <Navbar.Brand>webproject</Navbar.Brand>
+              <Navbar.Brand>Greenpath</Navbar.Brand>
             </LinkContainer>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
@@ -208,7 +209,7 @@ function App() {
         </Container>
       </main>
       <footer>
-        <div className="text-center">All rights reserved © webproject</div>
+        <div className="text-center">All rights reserved © Greenpath</div>
       </footer>
     </div>
   );

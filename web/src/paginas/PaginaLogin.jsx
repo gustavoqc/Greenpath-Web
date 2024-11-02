@@ -32,13 +32,11 @@ function PaginaLogin() {
 
   const handleSubmit = (e, name) => {
     e.preventDefault();
-    console.log("Entrando no sistema.");
     login(name, email, pass);
   };
 
   const handleSubmitRedirected = (e, name) => {
     e.preventDefault();
-    console.log("Entrando no sistema.");
     loginWithRedirect(name, email, pass);
   };
 
@@ -60,8 +58,6 @@ function PaginaLogin() {
             handleSubmit(e, name);
           }
         } else {
-          console.log(usuario.email_cliente);
-          console.log(usuario.senha_cliente);
           console.log("error");
           setUsuarioInexistente(true);
         }

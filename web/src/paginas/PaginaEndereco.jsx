@@ -26,7 +26,6 @@ export default function PaginaEndereco() {
     const email = item.email;
 
     (async () => {
-      console.log(enderecoData[0]);
       const shippingData = {
         fullName,
         address,
@@ -66,7 +65,6 @@ export default function PaginaEndereco() {
         { id: localStorage.getItem("userID") }
       );
 
-      console.log(data);
       setEnderecoData(data);
       setFullName(data[0].nome_cliente);
       setAddress(data[0].endereco_cliente);

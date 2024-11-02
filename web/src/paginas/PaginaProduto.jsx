@@ -46,14 +46,13 @@ function PaginaProduto() {
             link: link,
           }
         );
-        console.log({ link });
         dispatch({ type: "FETCH_SUCCESS", payload: resultado.data });
       } catch (erro) {
         dispatch({ type: "FETCH_FAIL", payload: getError(erro) });
       }
     };
     buscarDados();
-  }, [link]);
+  }, []);
 
   const { state, dispatch: ctxDispatch } = useContext(Loja);
   const {
@@ -61,11 +60,9 @@ function PaginaProduto() {
   } = state;
 
   const adicionarAoCarrinho = async (item) => {
-    const itemExistente = carrinhoItems.find(
-      (x) => x.id_prod === produto.id_prod
-    );
-
+    const itemExistente = carrinhoItems.find((x) => x.id === produto.id);
     const quantidade = itemExistente ? itemExistente.quantidade + 1 : 1;
+
     const { data } = await axios.get(
       `http://localhost:3001/selectProduto/${item.id_prod}`,
       { id: item.id_prod }
@@ -74,6 +71,7 @@ function PaginaProduto() {
       window.alert("Nos desculpe. O produto está sem estoque :(");
       return;
     }
+
     ctxDispatch({
       type: "CART_ADD_ITEM",
       payload: { ...item, quantidade },
@@ -92,16 +90,16 @@ function PaginaProduto() {
             <img
               className="img-large"
               src={produto.imagem_prod_path}
-              alt={produto.nome_produto}
+              alt={produto.nome_prod}
             />
           </Col>
           <Col md={3}>
             <ListGroup variant="flush">
               <ListGroup.Item>
                 <Helmet>
-                  <title>{produto.nome_produto}</title>
+                  <title>{produto.nome_prod}</title>
                 </Helmet>
-                <h1>{produto.nome_produto}</h1>
+                <h1>{produto.nome_prod}</h1>
               </ListGroup.Item>
               <ListGroup.Item>
                 <h3>Preço: R$ {produto.valor_prod}</h3>

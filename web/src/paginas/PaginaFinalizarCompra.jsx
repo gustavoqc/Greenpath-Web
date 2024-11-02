@@ -18,19 +18,19 @@ export default function PaginaFinalizarCompra() {
   const pagamento = JSON.parse(localStorage.getItem("paymentData"));
   var descricao = new Array();
 
-  const round2 = (num) => Math.round(num * 100 + Number.EPSILON) / 100; // 123.2345 => 123.23
+  const round2 = (num) => Math.round(num * 100 + Number.EPSILON) / 100;
   carrinho.valor_prod = round2(
     carrinho.carrinhoItems.reduce((a, c) => a + c.quantidade * c.valor_prod, 0)
   );
   if (shipping.pais === "Brasil") {
-    carrinho.preco_total = carrinho.valor_prod + 15;
+    carrinho.preco_total = round2(carrinho.valor_prod + 15);
   } else {
-    carrinho.preco_total = carrinho.valor_prod + 100;
+    carrinho.preco_total = round2(carrinho.valor_prod + 100);
   }
 
   const registrarTransacao = async () => {
     for (let i = 0; i < carrinho.carrinhoItems.length; i++) {
-      let nome = carrinho.carrinhoItems[i].nome_produto;
+      let nome = carrinho.carrinhoItems[i].nome_prod;
       let quantidade = carrinho.carrinhoItems[i].quantidade;
       let id = carrinho.carrinhoItems[i].id_prod;
       descricao[i] =
@@ -118,13 +118,13 @@ export default function PaginaFinalizarCompra() {
                       <Col md={6}>
                         <img
                           src={item.imagem_prod_path}
-                          alt={item.nome_produto}
+                          alt={item.nome_prod}
                           className="img-fluid rounded img-thumbnail"
                         ></img>{" "}
                         <Link
                           to={`/produto/${item.categoria_prod}/${item.link_url}`}
                         >
-                          {item.nome_produto}
+                          {item.nome_prod}
                         </Link>
                       </Col>
                       <Col md={3}>
@@ -165,7 +165,7 @@ export default function PaginaFinalizarCompra() {
                       <strong>Total</strong>
                     </Col>
                     <Col>
-                      <strong>R$ {carrinho.preco_total.reduce}</strong>
+                      <strong>R$ {carrinho.preco_total}</strong>
                     </Col>
                   </Row>
                 </ListGroup.Item>

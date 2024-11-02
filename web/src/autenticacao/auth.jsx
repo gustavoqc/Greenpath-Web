@@ -57,10 +57,11 @@ export const AuthProvider = ({ children }) => {
     do {
       const { data } = await axios.get(`http://localhost:3001/selectCliente`);
       {
+        let md5Pass = CryptoJS.MD5(pass).toString();
         data.map((usuario) => {
           if (
             email === usuario.email_cliente &&
-            pass === usuario.senha_cliente
+            md5Pass === usuario.senha_cliente
           ) {
             setfoundClient(true);
             setUser(loggedUser);

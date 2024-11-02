@@ -51,7 +51,6 @@ export default function PaginaRegistrar() {
       let passHash = CryptoJS.MD5(confirmPassword).toString();
       if (password !== passHash) {
         setErrorMessageValue("Senhas não coincidem. Tente novamente.");
-        console.log("Erro, senhas diferentes");
         return;
       }
 
