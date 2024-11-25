@@ -88,7 +88,6 @@ VALUES('Refrigerante', 1, 6.99, 30, 'Refrigerante 01', '\\imagens\\refrigerante-
 INSERT INTO produto(nome_prod, categoria_prod, valor_prod, estoque_prod, descricao_prod, imagem_prod_path, link_url) 
 VALUES('Suco de Laranja', 1, 1.99, 10, 'Suco de Laranja', '\\imagens\\suco_laranja.png', 'suco-laranja');
 
-
 INSERT INTO pagamento(nome_pagamento) VALUES("Dinheiro");
 INSERT INTO pagamento(nome_pagamento) VALUES("Pix");
 
