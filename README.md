@@ -1,7 +1,7 @@
 # Web-Project
 Tecnologias usadas: ReactJS, Javascript
 
-***Importante: Para ser possivel a execução, crie o banco de dados MySQL executando as instruções presentes no arquivo sql da pasta inicial do projeto.***
+***Importante: Para ser possivel a execução, crie o banco de dados MySQL executando as instruções presentes no arquivo "Mysql query.sql" da raiz do projeto.***
 
 # Instalação dos pacotes:
 Abra a pasta "server" do projeto em um terminal do windows
