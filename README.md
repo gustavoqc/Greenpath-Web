@@ -1,3 +1,5 @@
+*** Importante: Para compatibilidade, este projeto precisa estar na mesma raiz do projeto https://github.com/gustavoqc/Greenpath-Desktop  ***
+
 # Web-Project
 Tecnologias usadas: ReactJS, Javascript
 
