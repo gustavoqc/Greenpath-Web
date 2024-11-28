@@ -3,7 +3,7 @@
 
 # Web-Project
 
-Tecnologias necessárias: Node versão ^21 e npm versão ^10.9.0
+Tecnologias necessárias: Node versão ^21 e npm versão ^10.9.0 <br>
 Tecnologias usadas: ReactJS, Javascript
 
 # Instalação dos pacotes:
