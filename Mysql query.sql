@@ -68,29 +68,8 @@ CONSTRAINT fk_tipopagamento FOREIGN KEY(tipo_pagamento_selecionado) REFERENCES P
 );
 
 /*
-INSERT INTO cliente(nome_cliente, cpf_cliente, sexo_cliente, telefone_cliente, ano_nasc, email_cliente, cidade_cliente, endereco_cliente, cep_cliente, senha_cliente)
-VALUES('Cliente1', '12345678900', 'Masculino', 11900000000, '2024-01-01', 'Cliente@email.com', 'São Paulo', 'Rua São Paulo', '00000000', md5('12345'));
-
 INSERT INTO cargo_func(nome_cargo) VALUES('Gerente');
 
 INSERT INTO funcionario(nome_func, cargo_func, cpf_func, dt_admissao, senha_func, email_func)
 VALUES('Gerente1', 1, '1', '2024-01-01', md5('1234'), 'Gerente@email.com');
-
-INSERT INTO categoria_produto(nome_categ) VALUES('Frutas');
-INSERT INTO categoria_produto(nome_categ) VALUES('Verduras');
-
-INSERT INTO produto(nome_prod, categoria_prod, valor_prod, estoque_prod, descricao_prod, imagem_prod_path, link_url) 
-VALUES('Maçã', 2, 3.99, 25, 'Maçã', '\\imagens\\maca_1.webp', 'maca_01');
-
-INSERT INTO produto(nome_prod, categoria_prod, valor_prod, estoque_prod, descricao_prod, imagem_prod_path, link_url) 
-VALUES('Refrigerante', 1, 6.99, 30, 'Refrigerante 01', '\\imagens\\refrigerante-1.jpg', 'refrigerante_01');
-
-INSERT INTO produto(nome_prod, categoria_prod, valor_prod, estoque_prod, descricao_prod, imagem_prod_path, link_url) 
-VALUES('Suco de Laranja', 1, 1.99, 10, 'Suco de Laranja', '\\imagens\\suco_laranja.png', 'suco-laranja');
-
-INSERT INTO pagamento(nome_pagamento) VALUES("Dinheiro");
-INSERT INTO pagamento(nome_pagamento) VALUES("Pix");
-
-INSERT INTO transacao(valor_total, dt_transacao, descricao_transacao, id_func_selecionado, id_cliente_selecionado, tipo_pagamento_selecionado) 
-VALUES (19.98, "2024-01-01", "Banana Nanica x2", 1, 1, 1); 
 */
