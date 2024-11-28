@@ -1,11 +1,10 @@
 ***Importante: Para compatibilidade, este projeto precisa estar na mesma raiz do projeto https://github.com/gustavoqc/Greenpath-Desktop***
+***Para ser possivel a execução, crie o banco de dados MySQL executando as instruções presentes no arquivo "Mysql query.sql" da raiz do projeto.***
 
 # Web-Project
 
 Tecnologias necessárias: Node versão ^21 e npm versão ^10.9.0
 Tecnologias usadas: ReactJS, Javascript
-
-***Importante: Para ser possivel a execução, crie o banco de dados MySQL executando as instruções presentes no arquivo "Mysql query.sql" da raiz do projeto.***
 
 # Instalação dos pacotes:
 Abra a pasta "server" do projeto em um terminal do windows
